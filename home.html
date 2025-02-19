@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Art Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial;
+      color: white;
+      margin: 0;
+      padding: 0;
+      background-image: url('bg1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    header {
+      margin: 0;
+      padding: 0;
+      background-color: rgba(66, 44, 74, 0.8);
+    }
+
+    header ul {
+      margin: 0;
+      padding: 0;
+      background-color: #422c4a;
+      text-align: center;
+    }
+
+    header li {
+      display: inline;
+      color: #E1BEE7;
+    }
+
+    header a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    header a:hover {
+      background-color: #5e3d66;
+      color: white;
+    }
+
+    footer {
+      background-color: #826b8a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+      padding-bottom: 80px;
+    }
+
+    .image-container {
+      margin: 10px;
+      text-align: center;
+      width: 300px;
+    }
+
+    .art-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .art-image:hover {
+      transform: scale(1.1);
+    }
+
+    .image-description {
+      font-size: 16px;
+      color: #333333;
+      margin-top: 10px;
+    }
+
+    #gallery-title {
+      text-align: center;
+      color: #422c4a;
+      margin-top: 20px;
+      font-size: 36px;
+      font-family: 'Trebuchet MS', 'Verdana', sans-serif;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    [class*="col-"] {
+      width: 100%;
+      float: left;
+      padding: 5px;
+    }
+
+    @media only screen and (min-width: 600px) {
+      .col-s-3 {width: 25%;}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <ul>
+    <li><a href="#" onclick="return false;">Home</a></li>
+    <li><a href="#" onclick="return false;">Contact</a></li>
+    <li><a href="#" onclick="return false;">About</a></li>
+  </ul>
+</header>
+
+<h2 id="gallery-title">The Purple Palette Art Gallery! <i class="fa fa-paint-brush"></i></h2>
+
+<div class="gallery">
+  <div class="image-container col-s-3" id="art1">
+    <img src="p1.jpeg" alt="Art 1" class="art-image">
+    <p class="image-description"><strong>Whispers of the Wind</strong></p>
+  </div>
+  <div class="image-container col-s-3" id="art2">
+    <img src="p2.jpeg" alt="Art 2" class="art-image">
+    <p class="image-description"><strong>Golden Horizon</strong></p>
+  </div>
+  <div class="image-container col-s-3" id="art3">
+    <img src="p3.jpeg" alt="Art 3" class="art-image">
+    <p class="image-description"><strong>Forest Serenity</strong></p>
+  </div>
+  <div class="image-container col-s-3" id="art4">
+    <img src="p4.jpeg" alt="Art 4" class="art-image">
+    <p class="image-description"><strong>Mountain Majesty</strong></p>
+  </div>
+  <div class="image-container col-s-3" id="art5">
+    <img src="p5.jpeg" alt="Art 5" class="art-image">
+    <p class="image-description"><strong>Wilten Flowers</strong></p>
+  </div>
+  <div class="image-container col-s-3" id="art6">
+    <img src="p6.jpeg" alt="Art 6" class="art-image">
+    <p class="image-description"><strong>Comfort of a Home</strong></p>
+  </div>
+  <div class="image-container col-s-3" id="art7">
+    <img src="p7.jpeg" alt="Art 7" class="art-image">
+    <p class="image-description"><strong>Autumn Glow</strong></p>
+  </div>
+  <div class="image-container col-s-3" id="art8">
+    <img src="p8.jpeg" alt="Art 8" class="art-image">
+    <p class="image-description"><strong>Moonlit Shore</strong></p>
+  </div>
+  <div class="image-container col-s-3" id="art9">
+    <img src="p9.jpeg" alt="Art 9" class="art-image">
+    <p class="image-description"><strong>Starry Wilderness</strong></p>
+  </div>
+  <div class="image-container col-s-3" id="art10">
+    <img src="p10.jpeg" alt="Art 10" class="art-image">
+    <p class="image-description"><strong>Silent Glacier</strong></p>
+  </div>
+  <div class="image-container col-s-3" id="art11">
+    <img src="p11.jpeg" alt="Art 11" class="art-image">
+    <p class="image-description"><strong>Nature's Embrace</strong></p>
+</div>
+
+</div>
+<footer>
+  <p>2025 Art Gallery | All rights reserved <i class="fa fa-copyright"></i></p>
+</footer>
+<div class="home">
+  <h1>Welcome, <span id="username"></span>!</h1>
+</div>
+
+<script>
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    function checkSession() {
+        const authToken = getCookie('authToken');
+        if (authToken) {
+            document.getElementById('username').textContent = authToken;
+        } else {
+            window.location.href = 'index.html';
+        }
+    }
+    checkSession();
+</script>
+</body>
+</html>

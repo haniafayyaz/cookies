@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+            <label>Don't have an account? Signup <a href="signup.html">here</a></label>
+        </form>
+    </div>
+
+    <script>
+        function setCookie(name, value, minutes) {
+            const date = new Date();
+            date.setTime(date.getTime() + (minutes * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (!username || !password) {
+                alert('Please fill in both the username and password fields.');
+                return;
+            }
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+
+            if (storedUsername === username && storedPassword === password) {
+                setCookie('authToken', username, 2);
+                window.location.href = 'home.html';
+            } else {
+                alert('Invalid username or password.');
+            }
+        });
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let cookies = decodedCookie.split(';');
+
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i].trim();
+                if (cookie.indexOf(name) === 0) {
+                    return cookie.substring(name.length, cookie.length);
+                }
+            }
+            return "";
+        }
+
+        function checkSession() {
+            const authToken = getCookie('authToken');
+            if (authToken) {
+                alert('Welcome back, ' + authToken + '!');
+                window.location.href = 'home.html';
+            }
+        }
+        checkSession();
+    </script>
+</body>
+</html>

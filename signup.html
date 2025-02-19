@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login">
+        <h1>Signup</h1>
+        <form id="signupForm">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" onclick="signup()">Signup</button>
+        </form>
+    </div>
+
+    <script>
+        function signup() {
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (!fullname || !email || !username || !password) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            localStorage.setItem('fullname', fullname);
+            localStorage.setItem('email', email);
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
